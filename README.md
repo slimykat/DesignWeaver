@@ -1,7 +1,7 @@
 # Deasign Weaver: Dimensional Scaffolding for Text-to-Image Product Design
 
 <p align="center" width="100%">
-<img src="cover.png" alt="Smallville" style="width: 80%; min-width: 300px; display: block; margin: auto;">
+<img src="cover.png" alt="DesignWeaverTeaser" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
 
 This repository accompanies our research paper titled "DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design" (currently under review.) The repository contains the version that was presented in the CHI 2025's paper as well as a tool interface without the experiment controls. We create this new separate repository with cleaner code base for public access.

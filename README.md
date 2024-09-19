@@ -14,46 +14,62 @@ Bellow, we described the setup instruction for the Web Application.
 ## Setting Up the Environment
 To setup, you will need to have a working Firebase project, generate `.env` that contains your OpenAI API key and other certification keys, and download the necessary packages.
 ### Step 1: Create a Firebase project
-By default, both the loged data and generated images are stored in [Firebase](https://firebase.google.com/docs). Use your own account to start a project and enable Realtime Database and Starge.
-
-#### Realtime Database
-
-#### Storage
+By default, both the loged data and generated images are stored in [Firebase](https://firebase.google.com/docs). Use your own account to start a project and enable Realtime Database and Storage.
 
 
 ### Step 2: Generate Environment Variable File
-The Web Application will get private inputs from `.env` file, including your OpenAI api key. Bellow is the required variables, pleace configure the vallues according to your own setup.
+Create a file under the project's root folder named `.env`. The Web Application will get private inputs from this file, including your OpenAI api key and Firebase configurations. Bellow is the required variables, please configure the vallues according to your own account and setup.
+
+#### OpenAI key
+You need a paid OpenAI account to support DALLe3 model, gpt-4o model, and gpt-4o-mini model.
+```
+REACT_APP_OPENAI_API_KEY=Your own OpenAI key
+```
+
+#### Firebase SDK configuration
+You can find the Database URL in the Realtime Database tab and the other information in the `SDK Setup and Configuration` section under Project Overview.
 
 ```
-REACT_APP_OPENAI_API_KEY=Your own ChatGPT key that supports gpt-4o and gpt-4o-mini
+FIREBASE_DB_URL=Your own Firebase Realtime Database's URL
 
-REACT_APP_FIREBASE_API_KEY=Get the following information on Firebase' website
+REACT_APP_FIREBASE_API_KEY=Get the following information in Project Overview
 REACT_APP_FIREBASE_AUTH_DOMAIN=
 REACT_APP_FIREBASE_PROJECT_ID=
 REACT_APP_FIREBASE_STORAGE_BUCKET=
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
 REACT_APP_FIREBASE_APP_ID=
 REACT_APP_FIREBASE_MEASUREMENT_ID=
+```
 
-FIREBASE_DB_URL=Your own Firebase Realtime Database's URL
+#### Backend
+Auto-uploading to the Storage using scripts requires a private key. Go to your Firebase project setting and acces the `Service account` section. Create and download a private key and it under the `backen/key` folder.
+
+```
 FIREBASE_CERT_PATH=PATH to your Storage_private_key.json
 
 REACT_APP_BACKEND_URL=localhost:31 
 # the backend will run on port 31 by default. You may change its behavior in backend_server.py
-
 ```
 
 ### Step 3: Installation
 You will have to install for both the Python backend and the React frontend.
 
 #### Backend
-The depency for the backend is recorded in `backend_requirement.txt`. You may install them directly but we strongly suggest you to use a [Python virtual environment]().
+The depency for the backend is recorded in `backend_requirement.txt`. You may install them directly but we strongly suggest you to use a [Python virtual environment](https://docs.python.org/3/library/venv.html).
 ```
-python3 -i pip install < backend_requirement.txt
+# install virtual environment
+python3 -i pip install virtualenv
+python3 -m venv <virtual-environment-name>
+
+# activate virtual environment
+source <virtual-environment-name>/bin/activate
+
+# install python packages
+python3 -i pip install -r backend_requirement.txt
 ```
 
 #### React Web Application
-
+Execute the `npm start` command under the project's root folder. The required dependencies will be installed according the project.
 
 
 ## Running the Web Application

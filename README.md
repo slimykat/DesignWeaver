@@ -69,31 +69,27 @@ python3 -i pip install -r backend_requirement.txt
 ```
 
 #### React Web Application
-Execute the `npm start` command under the project's root folder. The required dependencies will be installed according the project.
+Execute the `npm install` command under the project's root folder. The required dependencies will be installed according the project.
 
-
-## Running the Web Application
-### Step 1: Start the server
-You will need to start the backend server first using the command.
+### Step 4: Start the Web Application
+Go to the project's root directory. Start the backend server first using. Then, you may run the `npm start` to start the Web Application.
 ```
+# under DesignWeaver
 python3 backend_server.py
-```
-Then, you may run the npm command to start the application.
-```
 npm start
 ```
-Now, the Web Application will be running on localhost:3030.
+Note: the Web Application will run on localhost:3030. If the port is ocupied by other process, you may change the port number in `package.json` Line 7.
 
-### Step 2: Running DesignWeaver
-The default route of localhost:3030 will lead you to an empty panel using the username "TestUser". Here you may explore the tool without hard time limit.
+## Run DesignWeaver's Testing Interface
+You may use any browser to access the interface on the localhost. The default route `localhost:3030/` will lead you to an empty panel with the username "TestUser". Here you may explore the tool without hard time limit.
 
-To start a full experiment session, access the endpoint `localhost:3030/Start` and enter a user name. The coresponding user account will be setup in the database.
-
+## Start a Full Task Session
+To start a full session, access the endpoint `localhost:3030/Start` and enter a user name. The coresponding user will be setup in the database. Each user name will have 60 minutes to access the session before being blocked.
 
 
 ## Authors and Citation
 
 ## Acknowledgement
-This public repo is not meant for production usage and the Web App is set to run on localhost. To securely run the application online, please consider host the application using [nginx]() or [Apache]().
+This public repo is not meant for production usage and the Web App is set to run on localhost. To securely run the application online, please consider host the application using [nginx](https://nginx.org/en/docs/) or [Apache](https://httpd.apache.org/docs/2.4/).
 
-The application is developed and tested in Node version and Python version 3.12.
+The application is developed and tested in Node version 14.18.3 and Python version 3.10.2.

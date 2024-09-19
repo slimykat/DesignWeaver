@@ -1,0 +1,1 @@
+# please put your firestorage private key.json here and rename it to "storage_private_key.json"

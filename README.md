@@ -9,12 +9,12 @@ This repository accompanies our research paper titled "DesignWeaver: Dimensional
 DesignWeaver is an AI-enabled product design interface for novice user. 
 Generative AI has enabled novice designers to quickly create professional-looking visual representations for product concepts. However, novices also have limited domain knowledge that could constrain their ability to write prompts that effectively explore a product design space. DesignWeaver aims to help them generate prompts for a text-to-image model by surfacing key design dimensions from generated images.
 
-Bellow described the setup instruction for the Web Application. 
+Bellow, we described the setup instruction for the Web Application. 
 
 ## Setting Up the Environment
 To setup, you will need to have a working Firebase project, generate `.env` that contains your OpenAI API key and other certification keys, and download the necessary packages.
 ### Step 1: Create a Firebase project
-By default, the application stores both the metadata and generated png on [Firebase]() ([Official Doc]()). Please use your own account to start a project and enable Realtime Database and Starge.
+By default, both the loged data and generated images are stored in [Firebase](https://firebase.google.com/docs). Use your own account to start a project and enable Realtime Database and Starge.
 
 #### Realtime Database
 

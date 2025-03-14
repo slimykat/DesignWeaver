@@ -4,7 +4,9 @@
 <img src="cover.png" alt="DesignWeaverTeaser" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
 
-This repository accompanies our research paper titled "DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design" (currently under review.) The repository contains the version that was presented in the CHI 2025's paper as well as a tool interface without the experiment controls. We create this new separate repository with cleaner code base for public access.
+This repository accompanies our research paper titled ["DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"](https://arxiv.org/abs/2502.09867). 
+
+The repository contains the version that was presented in the CHI 2025's paper as well as a tool interface without the experiment controls. We create this new separate repository with cleaner code base for public access.
 
 DesignWeaver is an AI-enabled product design interface for novice user. 
 Generative AI has enabled novice designers to quickly create professional-looking visual representations for product concepts. However, novices also have limited domain knowledge that could constrain their ability to write prompts that effectively explore a product design space. DesignWeaver aims to help them generate prompts for a text-to-image model by surfacing key design dimensions from generated images.
@@ -87,9 +89,26 @@ You may use any browser to access the interface on the localhost. The default ro
 To start a full session, access the endpoint `localhost:3030/Start` and enter a user name. The coresponding user will be setup in the database. Each user name will have 60 minutes to access the session before being blocked.
 
 
-## Authors and Citation
 
 ## Acknowledgement
 This public repo is not meant for production usage and the Web App is set to run on localhost. To securely run the application online, please consider host the application using [nginx](https://nginx.org/en/docs/) or [Apache](https://httpd.apache.org/docs/2.4/).
 
 The application is developed and tested in Node version 14.18.3 and Python version 3.10.2.
+
+## License and Citation
+
+If you find our work useful in your research, please cite our [paper](https://arxiv.org/abs/2502.09867):
+
+```bibtex
+@misc{chi2025designweaver,
+      title={DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design}, 
+      author={Sirui Tao, Ivan Liang, Cindy Peng, Zhiqing Wang, Srishti Palani, Steven P. Dow},
+      year={2024},
+      eprint={2502.09867},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2502.09867}, 
+}
+```
+
+See [LICENSE](LICENSE) file.

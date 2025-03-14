@@ -4,6 +4,8 @@
 <img src="cover.png" alt="DesignWeaverTeaser" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
 
+#### TODO: the code will be uploaded soon
+
 This repository accompanies our research paper titled ["DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"](https://arxiv.org/abs/2502.09867). 
 
 The repository contains the version that was presented in the CHI 2025's paper as well as a tool interface without the experiment controls. We create this new separate repository with cleaner code base for public access.

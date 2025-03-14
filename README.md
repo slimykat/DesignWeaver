@@ -104,13 +104,14 @@ The application is developed and tested in Node version 14.18.3 and Python versi
 If you find our work useful in your research, please cite our [paper](https://arxiv.org/abs/2502.09867):
 
 ```bibtex
-@misc{chi2025designweaver,
+@article{tao2025designweaver,
       title={DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design}, 
       author={Sirui Tao, Ivan Liang, Cindy Peng, Zhiqing Wang, Srishti Palani, Steven P. Dow},
-      year={2024},
+      year={2025},
+      journal={Conference on Human Factors in Computing Systems},
       eprint={2502.09867},
       archivePrefix={arXiv},
-      primaryClass={cs.CV},
+      primaryClass={cs.HC},
       url={https://arxiv.org/abs/2502.09867}, 
 }
 ```

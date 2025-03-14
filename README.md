@@ -32,7 +32,7 @@ Create a file under the project's root folder named `.env`. The Web Application 
 
 4. **Backend URL**: default set to localhost port 31
 
-<detail>
+<details>
 <summary>.env</summary>
 <br>
 REACT_APP_OPENAI_API_KEY=Your own OpenAI key
@@ -51,7 +51,7 @@ FIREBASE_CERT_PATH=PATH to your Storage_private_key.json
 
 REACT_APP_BACKEND_URL=localhost:31 
 
-</detail>
+</details>
 
 #### Backend
 Auto-uploading to the Storage using scripts requires a private key. Go to your Firebase project setting and acces .  and it under the `backen/key` folder.

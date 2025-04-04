@@ -1,0 +1,92 @@
+.post-exp-survey-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto; /* Allow the height to adjust */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto; /* Allow scroll if needed */
+}
+
+.post-exp-survey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: auto; /* Allow height to adjust */
+  margin-bottom: 20px;
+  overflow: visible; /* Ensure content is visible */
+  flex-wrap: wrap; /* Allow text and images to stack on smaller screens */
+}
+
+.post-exp-survey-text {
+  width: 60%;
+  height: auto; /* Allow height to adjust */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-exp-survey-images {
+  width: 35%;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+}
+
+.image-container {
+  flex-shrink: 0;
+  width: 100px; /* Default size, can be adjusted for larger screens */
+  height: 100px; /* Ensure 1:1 ratio */
+  overflow: hidden; /* Hide any overflow */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the image fits inside the container */
+}
+
+.image-container h4 {
+  margin-top: 5px;
+  color: white; /* Ensure the caption is visible */
+  font-size: 14px;
+}
+
+.post-exp-survey-iframe {
+  width: 100%;
+  height: calc(100vh - 300px); /* Adjust the height based on viewport minus header height */
+  border: none;
+  margin-top: 20px; /* Add some space between images and iframe */
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    width: 150px; /* Larger size for bigger screens */
+    height: 150px; /* Ensure 1:1 ratio */
+  }
+}
+
+@media (max-width: 768px) {
+  .post-exp-survey-header {
+    flex-direction: column; /* Stack the text and images on smaller screens */
+  }
+
+  .post-exp-survey-text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .post-exp-survey-images {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,72 @@
+/* DesignRequirement.css */
+
+.design-requirement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #f5f5f5; /* Light background for a clean, document-like look */
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.DesignR-Countdown-Wrapper {
+  display: flex;
+  justify-content: flex-end; /* Aligns both the timer and the button to the right */
+  align-items: center;
+  width: 100%;
+  /* margin-bottom: 20px; */
+  gap: 10px; /* Add space between the timer and the next button */
+}
+
+.Countdown-Title {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: black; /* Set the timer text color to black */
+}
+
+#clock {
+  font-size: 1rem;
+  color: black; /* Set the countdown timer color to black */
+}
+
+/* .design-requirement-container h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+} */
+
+.design-requirement-container p {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.design-requirement-iframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.floating-next-button {
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.floating-next-button:hover {
+  background-color: #0056b3;
+}

@@ -1,119 +1,167 @@
-# Deasign Weaver: Dimensional Scaffolding for Text-to-Image Product Design
+# DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design
+
+DesignWeaver is an AI-enabled product design interface that helps generate prompts for a text-to-image model by surfacing key design dimensions from generated images.  
+It is designed for novice designers with limited domain knowledge who struggle to write prompts that effectively explore a product design space.
 
 <p align="center" width="100%">
-<img src="cover.png" alt="DesignWeaverTeaser" style="width: 80%; min-width: 300px; display: block; margin: auto;">
+<img src="cover.png" alt="DesignWeaver Teaser" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
 
-#### TODO: the code will be uploaded soon
+This repository accompanies the CHI 2025 paper:  
+**"DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"**
 
-This repository accompanies our research paper titled ["DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"](https://arxiv.org/abs/2502.09867). 
+[arXiv preprint](https://arxiv.org/abs/2502.09867)
 
-The repository contains the version that was presented in the CHI 2025's paper as well as a tool interface without the experiment controls. We create this new separate repository with cleaner code base for public access.
-
-DesignWeaver is an AI-enabled product design interface for novice user. 
-Generative AI has enabled novice designers to quickly create professional-looking visual representations for product concepts. However, novices also have limited domain knowledge that could constrain their ability to write prompts that effectively explore a product design space. DesignWeaver aims to help them generate prompts for a text-to-image model by surfacing key design dimensions from generated images.
-
-Bellow, we described the setup instruction for the Web Application. 
+---
 
 ## Installation
-To setup, you will need to have a working Firebase project, generate `.env` that contains your OpenAI API key and other certification keys, and download the necessary packages.
-### Step 1: Create a Firebase project
-By default, both the loged data and generated images are stored in [Firebase](https://firebase.google.com/docs). Use your own account to start a project and enable Realtime Database and Storage.
 
+To set up, you will need:
+- A working Firebase project
+- An `.env` file containing your OpenAI API key and Firebase configuration
+- Installed dependencies for both the backend (Python) and frontend (React)
 
-### Step 2: Environment Variables
-Create a file under the project's root folder named `.env`. The Web Application will get private inputs from this file, including your OpenAI api key and Firebase configurations. Bellow is the required variables, please configure the vallues according to your own account and setup.
+---
 
-1. **OpenAI key**: a paid OpenAI account to support DALLe3 model, gpt-4o model, and gpt-4o-mini model
+### Step 1: Create a Firebase Project
 
-2. **Firebase SDK configuration**: checkout the `SDK Setup and Configuration` section under Project Overview in your firebase project
+By default, all logged data and generated images are stored in [Firebase](https://firebase.google.com/docs).
 
-3. **Firebase Storage key**: create and download a private key from the `Service account` section
+Using your own Firebase account:
+- Create a new project
+- Enable **Realtime Database** and **Storage**
+- Initialize the Realtime Database with the following structure:
 
-4. **Backend URL**: default set to localhost port 31
-
-<details>
-<summary>.env</summary>
-<br>
-REACT_APP_OPENAI_API_KEY=Your own OpenAI key
-
-FIREBASE_DB_URL=Your own Firebase Realtime Database's URL
-
-REACT_APP_FIREBASE_API_KEY=Get the following information in Project Overview
-REACT_APP_FIREBASE_AUTH_DOMAIN=
-REACT_APP_FIREBASE_PROJECT_ID=
-REACT_APP_FIREBASE_STORAGE_BUCKET=
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
-REACT_APP_FIREBASE_APP_ID=
-REACT_APP_FIREBASE_MEASUREMENT_ID=
-
-FIREBASE_CERT_PATH=PATH to your Storage_private_key.json
-
-REACT_APP_BACKEND_URL=localhost:31 
-
-</details>
-
-#### Backend
-Auto-uploading to the Storage using scripts requires a private key. Go to your Firebase project setting and acces .  and it under the `backen/key` folder.
-
-
-### Step 3: Dependency
-You will have to install for both the Python backend and the React frontend.
-
-#### Backend
-The depency for the backend is recorded in `backend_requirement.txt`. You may install them directly but we strongly suggest you to use a [Python virtual environment](https://docs.python.org/3/library/venv.html).
-```
-# install virtual environment
-python3 -i pip install virtualenv
-python3 -m venv <virtual-environment-name>
-
-# activate virtual environment
-source <virtual-environment-name>/bin/activate
-
-# install python packages
-python3 -i pip install -r backend_requirement.txt
-```
-
-#### React Web Application
-Execute the `npm install` command under the project's root folder. The required dependencies will be installed according the project.
-
-### Step 4: Start the Web Application
-Go to the project's root directory. Start the backend server first using. Then, you may run the `npm start` to start the Web Application.
-```
-# under DesignWeaver
-python3 backend_server.py
-npm start
-```
-Note: the Web Application will run on localhost:3030. If the port is ocupied by other process, you may change the port number in `package.json` Line 7.
-
-## Run DesignWeaver's Testing Interface
-You may use any browser to access the interface on the localhost. The default route `localhost:3030/` will lead you to an empty panel with the username "TestUser". Here you may explore the tool without hard time limit.
-
-## Start a Full Task Session
-To start a full session, access the endpoint `localhost:3030/Start` and enter a user name. The coresponding user will be setup in the database. Each user name will have 60 minutes to access the session before being blocked.
-
-
-
-## Acknowledgement
-This public repo is not meant for production usage and the Web App is set to run on localhost. To securely run the application online, please consider host the application using [nginx](https://nginx.org/en/docs/) or [Apache](https://httpd.apache.org/docs/2.4/).
-
-The application is developed and tested in Node version 14.18.3 and Python version 3.10.2.
-
-## License and Citation
-
-If you find our work useful in your research, please cite our [paper](https://arxiv.org/abs/2502.09867):
-
-```bibtex
-@article{tao2025designweaver,
-      title={DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design}, 
-      author={Sirui Tao, Ivan Liang, Cindy Peng, Zhiqing Wang, Srishti Palani, Steven P. Dow},
-      year={2025},
-      journal={Conference on Human Factors in Computing Systems},
-      eprint={2502.09867},
-      archivePrefix={arXiv},
-      primaryClass={cs.HC},
-      url={https://arxiv.org/abs/2502.09867}, 
+```json
+{
+  "Image_pool": {},
+  "participants": {}
 }
 ```
 
-See [LICENSE](LICENSE) file.
+---
+
+### Step 2: Environment Variables
+
+Create a `.env` file in the project root directory.  
+The Web Application reads private configurations from this file, including your OpenAI API key and Firebase credentials.
+
+You will need:
+
+1. **OpenAI API Key**: A paid OpenAI account supporting DALL·E 3, GPT-4o, and GPT-4o-mini models.
+2. **Firebase SDK Configuration**: Available under `Project Overview` → `SDK Setup and Configuration`.
+3. **Firebase Storage Service Account Key**: Downloadable under `Project Settings` → `Service accounts`.
+4. **Backend URL**: Default is `localhost:31`.
+
+<details>
+<summary><b>Example .env file</b></summary>
+
+```env
+REACT_APP_OPENAI_API_KEY=your-openai-api-key
+
+FIREBASE_DB_URL=your-firebase-realtime-database-url
+
+REACT_APP_FIREBASE_API_KEY=...
+REACT_APP_FIREBASE_AUTH_DOMAIN=...
+REACT_APP_FIREBASE_PROJECT_ID=...
+REACT_APP_FIREBASE_STORAGE_BUCKET=...
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=...
+REACT_APP_FIREBASE_APP_ID=...
+REACT_APP_FIREBASE_MEASUREMENT_ID=...
+
+FIREBASE_CERT_PATH=path/to/your/storage_private_key.json
+
+REACT_APP_BACKEND_URL=localhost:31
+```
+
+</details>
+
+---
+
+### Step 3: Install Dependencies
+
+You need to install dependencies for both the backend (Python) and frontend (React).
+
+#### Backend (Python)
+
+Dependencies are listed in `backend_requirement.txt`.  
+It is **strongly recommended** to use a [Python virtual environment](https://docs.python.org/3/library/venv.html).
+
+```bash
+# Install virtualenv if needed
+pip install virtualenv
+
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install Python packages
+pip install -r backend_requirement.txt
+```
+
+#### Frontend (React)
+
+Install frontend dependencies:
+
+```bash
+npm install
+```
+(Ensure you are in the project root directory.)
+
+---
+
+## Run the Application
+
+Start the backend server first, then the frontend Web Application:
+
+```bash
+# Start backend
+python3 backend_server.py
+
+# In a new terminal, start frontend
+npm start
+```
+
+- The frontend will run by default at: `http://localhost:3030/`
+- If port 3030 is occupied, you can change the port in `package.json` (line 7).
+
+---
+
+## Start a Session
+
+1. Assign a user ID under `participants` in your Firebase Realtime Database (e.g., `{ "TestUser": 1 }`).
+2. Use that ID to start a session by visiting:  
+   `http://localhost:3030/`
+
+---
+
+## Acknowledgments
+
+This repository is intended for **research purposes** and **local development** only.  
+For production deployment, consider hosting with [nginx](https://nginx.org/en/docs/) or [Apache](https://httpd.apache.org/docs/2.4/).
+
+- Developed and tested with:
+  - Node.js v14.18.3
+  - Python v3.10.2
+
+---
+
+## License and Citation
+
+If you find our work useful in your research, please cite:
+
+```bibtex
+@article{tao2025designweaver,
+  title={DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design},
+  author={Sirui Tao, Ivan Liang, Cindy Peng, Zhiqing Wang, Srishti Palani, Steven P. Dow},
+  journal={Conference on Human Factors in Computing Systems},
+  year={2025},
+  eprint={2502.09867},
+  archivePrefix={arXiv},
+  primaryClass={cs.HC},
+  url={https://arxiv.org/abs/2502.09867}
+}
+```
+
+See [LICENSE](LICENSE) for license information.
+```

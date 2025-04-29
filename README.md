@@ -1,16 +1,14 @@
 # DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design
 
-DesignWeaver is an AI-enabled product design interface that helps generate prompts for a text-to-image model by surfacing key design dimensions from generated images.  
-It is designed for novice designers with limited domain knowledge who struggle to write prompts that effectively explore a product design space.
+DesignWeaver is an AI-enabled product design interface that helps generate prompts for a text-to-image model by surfacing key design dimensions from generated images. It is designed for novice designers with limited domain knowledge who struggle to write prompts that effectively explore a product design space.
 
 <p align="center" width="100%">
 <img src="cover.png" alt="DesignWeaver Teaser" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
 
-This repository accompanies the CHI 2025 paper:  
-**"DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"**
+This repository accompanies the CHI 2025 paper: **"DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"**
 
-[arXiv preprint](https://arxiv.org/abs/2502.09867)
+[arXiv](https://arxiv.org/abs/2502.09867) | [CHI'25](https://dl.acm.org/doi/10.1145/3706598.3714211)
 
 ---
 
@@ -51,8 +49,8 @@ You will need:
 1. **OpenAI API Key**: A paid OpenAI account supporting DALL·E 3, GPT-4o, and GPT-4o-mini models.
 2. **Firebase SDK Configuration**: Available under `Project Overview` → `SDK Setup and Configuration`.
 3. **Firebase Storage Service Account Key**: Downloadable under `Project Settings` → `Service accounts`.
-4. **Backend URL**: Default is `localhost:31`.
-
+4. **Firebase Storage URL**: The URL of the Storage.
+5. **Backend URL**: Default is `localhost:31`.
 <details>
 <summary><b>Example .env file</b></summary>
 
@@ -69,6 +67,7 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=...
 REACT_APP_FIREBASE_APP_ID=...
 REACT_APP_FIREBASE_MEASUREMENT_ID=...
 
+FIREBASE_STORAGE_URL=your-firebase-storage-url
 FIREBASE_CERT_PATH=path/to/your/storage_private_key.json
 
 REACT_APP_BACKEND_URL=localhost:31
@@ -129,7 +128,7 @@ npm start
 
 ## Start a Session
 
-1. Assign a user ID under `participants` in your Firebase Realtime Database (e.g., `{ "TestUser": 1 }`).
+1. Assign a user ID under `participants` in your Firebase Realtime Database (e.g., `"participants":{ "TestUser": 1 }`).
 2. Use that ID to start a session by visiting:  
    `http://localhost:3030/`
 

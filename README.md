@@ -8,7 +8,7 @@ DesignWeaver is an AI-enabled product design interface that helps generate promp
 
 This repository accompanies the CHI 2025 paper: **"DesignWeaver: Dimensional Scaffolding for Text-to-Image Product Design"**
 
-[arXiv](https://arxiv.org/abs/2502.09867) | [CHI'25](https://dl.acm.org/doi/10.1145/3706598.3714211)
+[arXiv](https://arxiv.org/abs/2502.09867) | [CHI'25](https://dl.acm.org/doi/10.1145/3706598.3714211) | [video](https://www.youtube.com/watch?v=GBnaTmGX554&ab_channel=ACMSIGCHI)
 
 ---
 

@@ -1,0 +1,294 @@
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  padding: 1rem;
+  /* max-height: 100%; */
+  /* text-align: center; */
+}
+
+.evaluation {
+  /* display: grid; */
+  /* grid-template-columns: 6fr 6fr; */
+  /* gap: 0.3%; */
+  height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: grey; */
+}
+
+.evaluation-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.eval-image-section-title {
+  /* height: 10%; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.eval-image-section-title-text {
+  width: 90%;
+  text-align: left;
+}
+
+.eval-Next-Button {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.evaluation .eval-image-section-title h2 {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.eval-image-section {
+  background-color: rgb(238, 238, 238);
+  /* position: fixed;
+  bottom: 1rem;
+  top: 10%;
+  left: 21%;
+  right: 1rem; */
+  width: 82%;
+  height: 100%;
+  border-radius: 20px;
+  gap: 1%;
+
+  padding: 1%;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eval-thumbnail {
+  position: relative;
+  width: 100%;
+  /* set height equal to width */
+  height: 0;
+  padding-bottom: 100%;
+  /* This creates a square by maintaining a 1:1 aspect ratio */
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Align items at the top */
+  overflow: hidden;
+}
+
+.eval-imageContainer {
+  position: absolute;
+  top: 0%;
+  /* width: 100%; */
+  /* set height equal to width */
+  /* height: 0; */
+  padding-bottom: 100%;
+  /* This creates a square by maintaining a 1:1 aspect ratio */
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Align items at the top */
+  overflow: hidden;
+}
+
+.eval-imageContainer img {
+  position: static;
+  object-fit: contain;
+}
+
+.eval-heart-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5em;
+  z-index: 1000;
+}
+
+.eval-selected-images-list {
+  /* position: absolute; */
+  /* left: 1rem;
+  right: 1rem;
+  top: 1rem;
+  bottom: 1rem; */
+  width: auto;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 3%;
+}
+
+.eval-image-pool-panel-wraper {
+  flex: 1;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding-top: 1%; */
+  padding-bottom: 1%;
+  overflow: hidden;
+  /* Prevents overflow */
+}
+
+.eval-image-pool-panel {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  /* Removed extra semicolon */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding-top: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 1%;
+  box-sizing: border-box;
+}
+
+.eval-imageContainer {
+  position: absolute;
+  top: 0%;
+  /* width: 100%; */
+  /* set height equal to width */
+  /* height: 0; */
+  padding-bottom: 100%;
+  /* This creates a square by maintaining a 1:1 aspect ratio */
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Align items at the top */
+  overflow: hidden;
+}
+
+.eval-imageContainer img {
+  position: static;
+  object-fit: contain;
+}
+
+.eval-selected-section {
+  background-color: rgb(238, 238, 238);
+  width: 16%;
+  height: 100%;
+  display: flex;
+  grid-gap: 1%;
+  grid-template-rows: 0.1fr 0.1fr 9.8fr;
+  border-radius: 20px;
+  /* position: fixed;
+  top: 10%;
+  bottom: 1rem;
+  left: 1rem;
+  right: 81%; */
+  /* overflow: hidden; */
+  z-index: 11;
+  /* Prevents overflow */
+
+  padding: 1%;
+}
+
+.eval-checkbox {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: white;
+  /* color           : #4199F7; */
+  width: 1em;
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border          : 4px solid #4199F7; */
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.eval-checkbox:hover {
+  cursor: pointer;
+}
+
+.eval-Tab-button-wrapper {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.eval-LikeTab-button {
+  border-radius: 10%;
+  width: auto;
+  height: 2em;
+  padding: 0 0.8em; /* Adjust padding to fit both icons and counter */
+  background-color: grey;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  position: relative;
+}
+
+.eval-LikeTab-button:hover {
+  outline: none;
+  background-color: #ada9a9a7;
+  border-color: #4096ff;
+}
+
+.eval-like-counter {
+  margin-left: 0.3em; /* Space between heart icon and counter */
+  background-color: transparent;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0 0.2em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-button {
+  position: static;
+  /* bottom: 20px;
+    right: 20px; */
+  z-index: 1000;
+}
+
+.floating-button:hover {
+  border-color: #4096ff;
+}
+
+/* .eval-image-section-instruction {
+  position: absolute;
+  bottom: 1rem;
+  left: 20%;
+  right: 1rem;
+  height: 8%;
+  z-index: 10;
+
+  display: flex;
+  gap: 0.5em;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+} */
